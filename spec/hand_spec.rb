@@ -79,11 +79,11 @@ describe Hand do
 
         let(:full_house) do
             Hand.new([
-                Card.new(:spades, :four),
-                Card.new(:spades, :seven),
                 Card.new(:spades, :ace),
-                Card.new(:spades, :two),
-                Card.new(:spades, :eight)
+                Card.new(:spades, :ace),
+                Card.new(:spades, :king),
+                Card.new(:spades, :king),
+                Card.new(:spades, :king)
             ])
         end
 
@@ -100,10 +100,10 @@ describe Hand do
         let(:straight) do
             Hand.new([
                 Card.new(:hearts, :king),
-                Card.new(:diamonds, :three),
-                Card.new(:hearts, :three),
-                Card.new(:spades, :jack),
-                Card.new(:spades, :ten)
+                Card.new(:diamonds, :queen),
+                Card.new(:hearts, :jack),
+                Card.new(:spades, :ten),
+                Card.new(:spades, :nine)
             ])
         end
 
@@ -337,7 +337,7 @@ describe Hand do
 
                     it "compares based on high card suit if same high card value" do
                         expect(ace_with_two <=> ace_with_two_hearts).to eq(1)
-                        expect(ace_with_two_hearts <=> ace_with_two_hearts).to eq(-1)
+                        expect(ace_with_two_hearts <=> ace_with_two).to eq(-1)
                     end
                 end
 

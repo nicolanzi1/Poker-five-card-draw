@@ -5,7 +5,7 @@ describe Player do
 
     describe "::buy_in" do
         it "should create a player" do
-            expect(Player.buy_in(100).to be_a(Player))
+            expect(Player.buy_in(100)).to be_a(Player)
         end
 
         it "should set the players bankroll" do
@@ -14,7 +14,7 @@ describe Player do
     end
 
     describe "#deal_in" do
-        let(:hand) { double ("hand") }
+        let(:hand) { double("hand") }
 
         it "should set the players hand" do
             player.deal_in(hand)
@@ -83,7 +83,7 @@ describe Player do
 
     describe "#unfolfd" do
         it "should set folded? to false" do
-            player.unfolfd
+            player.unfold
             expect(player).to_not be_folded
         end
     end
