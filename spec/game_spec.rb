@@ -38,7 +38,7 @@ describe Game do
         end
     end
 
-    describe "game_over?" do
+    describe "#game_over?" do
         it "should return false when players still have money" do
             game.add_players(5, 100)
             expect(game).not_to be_game_over
