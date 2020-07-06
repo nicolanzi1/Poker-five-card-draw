@@ -1,4 +1,8 @@
+require_relative 'tie_breaker'
+
 module PokerHands
+    include TieBreaker
+
     RANKS = [
         :royal_flush,
         :straight_flush,
